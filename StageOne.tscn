@@ -1,0 +1,137 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://GroundTileSet.tres" type="TileSet" id=2]
+[ext_resource path="res://EnemyPumpkin.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/BKGSpring.png" type="Texture" id=4]
+[ext_resource path="res://ChangeStage.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Uva.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/music/wav/level.wav" type="AudioStream" id=7]
+[ext_resource path="res://StageOne.gd" type="Script" id=8]
+[ext_resource path="res://assets/fonts/pixel_nes/Pixel_NES/Pixel_NES.otf" type="DynamicFontData" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 10
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 10
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 10
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 10
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 9 )
+
+[node name="StageOne" type="Node2D"]
+script = ExtResource( 8 )
+
+[node name="ChangeStage" parent="." instance=ExtResource( 5 )]
+position = Vector2( 152, -8 )
+target_stage = "res://StageTwo.tscn"
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 48, 104 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -393196, 0, 0, -327661, 0, 0, -262126, 0, 0, -196591, 0, 0, -196564, 1, 0, -131056, 0, 0, -131028, 1, 0, -65521, 0, 0, -65492, 1, 0, 65535, 1, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 14, 0, 0, 44, 1, 0, 131071, 1, 0, 65549, 0, 0, 65580, 1, 0, 196607, 1, 0, 131084, 0, 0, 131116, 1, 0, 262143, 1, 0, 196619, 0, 0, 196652, 1, 0, 327679, 1, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 262162, 0, 0, 262188, 1, 0, 393215, 1, 0, 327686, 0, 0, 327691, 0, 0, 327724, 1, 0, 458751, 1, 0, 393221, 0, 0, 393228, 0, 0, 393260, 1, 0, 524287, 1, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458760, 0, 0, 458763, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458769, 0, 0, 458772, 0, 0, 458773, 0, 0, 458775, 0, 0, 458777, 0, 0, 458778, 0, 0, 458780, 0, 0, 458781, 0, 0, 458782, 0, 0, 458784, 0, 0, 458786, 0, 0, 458787, 0, 0, 458788, 0, 0, 458790, 0, 0, 458791, 0, 0, 458792, 0, 0, 458793, 0, 0, 458794, 0, 0, 458795, 0, 0, 458796, 1, 0, 589823, 1, 0, 524288, 1, 0, 524289, 1, 0, 524290, 1, 0, 524291, 1, 0, 524292, 1, 0, 524301, 1, 0, 524302, 1, 0, 524303, 1, 0, 524308, 1, 0, 524309, 1, 0, 524314, 1, 0, 524318, 1, 0, 524322, 1, 0, 524326, 1, 0, 524327, 1, 0, 524328, 1, 0, 524329, 1, 0, 524330, 1, 0, 524331, 1, 0, 524332, 1, 0, 655359, 1, 0, 589824, 1, 0, 589825, 1, 0, 589826, 1, 0, 589827, 1, 0, 589828, 1, 0, 589829, 1, 0, 589830, 1, 0, 589831, 1, 0, 589832, 1, 0, 589833, 1, 0, 589834, 1, 0, 589835, 1, 0, 589836, 1, 0, 589837, 1, 0, 589838, 1, 0, 589839, 1, 0, 589840, 1, 0, 589841, 1, 0, 589842, 1, 0, 589843, 1, 0, 589844, 1, 0, 589845, 1, 0, 589846, 1, 0, 589847, 1, 0, 589848, 1, 0, 589849, 1, 0, 589850, 1, 0, 589851, 1, 0, 589852, 1, 0, 589853, 1, 0, 589854, 1, 0, 589855, 1, 0, 589856, 1, 0, 589857, 1, 0, 589858, 1, 0, 589859, 1, 0, 589860, 1, 0, 589861, 1, 0, 589862, 1, 0, 589863, 1, 0, 589864, 1, 0, 589865, 1, 0, 589866, 1, 0, 589867, 1, 0, 589868, 1, 0 )
+
+[node name="EnemyPumpkin" parent="." instance=ExtResource( 3 )]
+position = Vector2( 32, 56 )
+
+[node name="EnemyPumpkin2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 16, 104 )
+
+[node name="EnemyPumpkin4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 560, 104 )
+
+[node name="EnemyPumpkin5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 616, 104 )
+
+[node name="EnemyPumpkin6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 328, 104 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_base_scale = Vector2( 1, 0.9 )
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = -100
+z_as_relative = false
+motion_mirroring = Vector2( 16, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 0, -144 )
+region_rect = Rect2( 0, 0, 16, 0 )
+
+[node name="Uva" parent="." instance=ExtResource( 6 )]
+position = Vector2( 88, 72 )
+
+[node name="Uva2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 136, 40 )
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
+
+[node name="ScoreCounter" type="Node" parent="."]
+
+[node name="UI" type="CanvasLayer" parent="ScoreCounter"]
+
+[node name="Control" type="Control" parent="ScoreCounter/UI"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreValue" type="RichTextLabel" parent="ScoreCounter/UI/Control"]
+margin_left = 47.0
+margin_right = 87.0
+margin_bottom = 40.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreText" type="RichTextLabel" parent="ScoreCounter/UI/Control"]
+margin_right = 48.0
+margin_bottom = 40.0
+custom_fonts/normal_font = SubResource( 3 )
+text = "Score"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LivesText" type="RichTextLabel" parent="ScoreCounter/UI/Control"]
+margin_top = 16.0
+margin_right = 40.0
+margin_bottom = 56.0
+custom_fonts/normal_font = SubResource( 4 )
+text = "Lives "
+
+[node name="LivesValue" type="RichTextLabel" parent="ScoreCounter/UI/Control"]
+margin_left = 48.0
+margin_top = 16.0
+margin_right = 88.0
+margin_bottom = 56.0
+custom_fonts/normal_font = SubResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
