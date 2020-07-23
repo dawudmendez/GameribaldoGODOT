@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-const SPEED = 35
+const SPEED = 60
 const GRAVITY = 10
-const JUMP_POWER = -200
+const JUMP_POWER = -280
 const FLOOR = Vector2(0, -1)
 
 var velocity = Vector2()
@@ -10,6 +10,7 @@ var on_ground = false
 var is_dead = false
 
 func _physics_process(delta):
+		
 	if is_dead == false:
 		if Input.is_action_pressed("ui_right"):		
 			velocity.x = SPEED
@@ -48,6 +49,9 @@ func _physics_process(delta):
 			for i in range(get_slide_count()):
 				if "EnemyPumpkin" in get_slide_collision(i).collider.name:
 					dead()
+	
+		if position.y > 180:
+			dead()
 	
 func dead():
 	is_dead = true

@@ -36,6 +36,6 @@ func _physics_process(delta):
 		$RayCast2D.position.x *= -1
 		
 	if get_slide_count() > 0:
-			for i in range(get_slide_count()):
-				if "Player" in get_slide_collision(i).collider.name:
-					get_slide_collision(i).collider.dead()
+		for i in range(get_slide_count()):
+			if "Player" in get_slide_collision(i).collider.name:
+				get_slide_collision(i).collider.dead()

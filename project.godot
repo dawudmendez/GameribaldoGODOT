@@ -17,6 +17,8 @@ _global_script_class_icons={
 
 config/name="Gameribaldo"
 run/main_scene="res://TitleScreen.tscn"
+boot_splash/image="res://assets/splash.png"
+boot_splash/fullsize=false
 config/icon="res://icon.png"
 
 [autoload]

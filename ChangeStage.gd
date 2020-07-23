@@ -8,5 +8,16 @@ func _ready():
 
 func _on_ChangeStage_body_entered(body):
 	if "Player" in body.name:
+		GameVariables.lives = 3
+		
+		var Music = get_parent().get_node("Music")
+		Music.stop()
+		
+		var LevelWinMusic = get_parent().get_node("Player/LevelWin")
+		LevelWinMusic.play()
+		
 		$Timer.start()
-		get_tree().change_scene(target_stage)
+
+
+func _on_Timer_timeout():
+	get_tree().change_scene(target_stage)

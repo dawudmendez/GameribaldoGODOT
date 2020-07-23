@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/enemies/onion/onion_0.png" type="Texture" id=1]
+[ext_resource path="res://assets/enemies/onion/onion_1.png" type="Texture" id=2]
+[ext_resource path="res://EnemyOnion.gd" type="Script" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "run",
+"speed": 8.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 6, 8 )
+
+[node name="EnemyOnion" type="KinematicBody2D"]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "run"
+frame = 1
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2( 5.04893, 0 )
+enabled = true
+cast_to = Vector2( 0, 10 )
+__meta__ = {
+"_edit_group_": true
+}

@@ -16,7 +16,7 @@ func _ready():
 func _input(event):
 	if event is InputEventKey:
 		if event.pressed:
-			get_tree().change_scene("StageOne.tscn")
+			get_tree().change_scene("res://MainSpring.tscn")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

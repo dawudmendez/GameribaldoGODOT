@@ -16,12 +16,16 @@ func _ready():
 #	pass
 
 
-
-
 func _on_Uva_body_entered(body):
 	if "Player" in body.name:
 		#$Sound.play()
 		GameVariables.score += 100
+		
 		var LabelNode = get_parent().get_node("ScoreCounter/UI/Control/ScoreValue")
 		LabelNode.text = str(GameVariables.score)
+		
+		var PlayerNode = get_parent().get_node("Player/Fruit")
+		PlayerNode.play()
+		
+		
 		queue_free()
